@@ -1,0 +1,91 @@
+﻿(*connect "IBAIServer"
+show remote*)
+TypeText windowsKey, r
+TypeText "Chrome",return
+TypeText "www.rb.com", return
+CaptureScreen (Name: "rb")
+
+MoveTo text:"Brands"
+Click text:Dettol
+
+Repeat until ImageFound(text:"Dettol products")
+	typetext pageDown
+End repeat
+
+
+put "1" into rank
+put "123" into products_sold
+put "456" into countries
+
+set myexcel to workbook(ResourcePath("data.xlsx"))
+set worksheet1 to myexcel.worksheet("Sheet1")
+
+put "rank" into cell("A1") of worksheet1
+put rank into cell("B1") of worksheet1
+
+put "products_sold" into cell("A2") of worksheet1
+put products_sold into cell("B2") of worksheet1
+
+put "countries" into cell("A3") of worksheet1
+put countries into cell("B3") of worksheet1
+
+SendMail to:"narasimha.gujjula@eggplant.io", subject:"Dettol Information", message:"Please find the attached for detailed info", attachment:ResourcePath("data.xlsx")
+
+Click "Newtab"
+TypeText "outlook.office.com",return
+CaptureScreen(Name:"outlook")
+
+MoveTo text:"Dettol", waitFor:20
+DoubleClick text:"Dettol", waitFor:5
+CaptureScreen(Name:"email")
+Click text:"data.xlsx"
+CaptureScreen(Name:"excel")
+
+MoveTo text:"rank"
+Click text:"rank"
+
+typetext controlKey,A
+typetext controlKey,C
+typetext altKey,F4
+typetext altKey,F4
+
+RightClick (500,200)
+MoveTo text:"New"
+
+put EveryImageLocation(text:"Text Document") into newdoc
+click second item of newdoc
+
+//Click text:"Text Document"
+
+Typetext "Dettol",return
+DoubleClick text:"Dettol"
+typetext controlKey,v
+typetext controlKey,s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

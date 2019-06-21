@@ -1,0 +1,45 @@
+﻿connect "IBAIServer"
+show remote
+TypeText windowsKey, r
+TypeText "Chrome",return
+TypeText "www.rb.com", return
+TypeText windowsKey,upArrow
+wait 10
+set the ImageUpdate to off
+if ImageFound("AboutCookiesOnThisSite") then
+	click (text:"Accept", WaitFor:89)
+	MoveTo text:"Brands", waitFor:20
+else
+	MoveTo text:"Brands", waitFor:20
+	
+end if
+Click text:"Dettol"
+
+Repeat until ImageFound(text:"Dettol products",waitfor:5)
+	typetext downArrow
+	
+End repeat
+
+put ReadText("Dettolproducts_Rank_UL", "Dettolproducts_Rank_BR") into rank
+
+log "Rank :"&&rank
+
+put ReadText("Dettolproducts_sold_UL", "Dettolproducts_sold_BR") into products_sold
+log "Products Sold Each year :" &&products_sold
+
+put ReadText("Dettolproducts_Countries_UL", "Dettolproducts_Countries_BR") into countries
+log "Present in countries :"&& countries
+
+
+
+
+
+put "‪C:\Users\lmcgeko\Desktop\rb\dettol_details.txt" into filelocation
+put "Rank:"&rank into file filelocation
+put crlf&"Products Sold Each year :" &&products_sold after file filelocation
+put crlf&"Present in countries :"&& countries after file filelocation
+
+
+
+put file filelocation into text_content
+log text_content

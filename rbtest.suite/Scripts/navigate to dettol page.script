@@ -1,0 +1,23 @@
+﻿
+If global connectionname="IBAIServer" then
+	wait 3
+	MoveTo text:"Brands"
+	wait 5
+	Click text:Dettol
+Else
+	set the swipeSpeed to 0.5
+	Repeat until ImageFound(text:"Our brands")
+		SwipeUp
+	End repeat
+	
+	Click text:"BRANDS", caseSensitive:"On"
+	
+	
+	repeat until ImageFound("Dettol_Icon")
+		SwipeUp
+	end repeat
+	Click "Dettol_Icon"
+End if
+
+global connectionname
+

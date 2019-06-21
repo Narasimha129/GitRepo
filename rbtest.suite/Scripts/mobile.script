@@ -1,0 +1,46 @@
+﻿connect "Moto"
+show remote
+PressHomeButton 
+Click "GoogleSearch"
+wait 2 
+SetOption nextKeyDelay, 0.08
+Typetext "www.rb.com",
+typetext return
+
+show remote
+set the swipeSpeed to 0.5
+Repeat until ImageFound(text:"Our brands")
+	SwipeUp
+End repeat
+
+Click text:"BRANDS", caseSensitive:"On"
+
+
+repeat until ImageFound("Dettol_Icon")
+	SwipeUp
+end repeat
+Click "Dettol_Icon"
+
+Repeat until ImageFound(text:"IN ANTISEPTICS WORLDWIDE")
+	SwipeUp
+End repeat
+
+put ReadText("Rank_UL", "Rank_BR") into Rank
+
+log Rank
+
+Repeat until ImageFound(text:"MILLION BOTTLES SOLD EACH YEAR")
+	SwipeUp
+End repeat
+
+put ReadText("Bottlesold_UL", "Bottlesold_BR") into bottlessold
+
+log bottlessold
+
+Repeat until ImageFound(text:"PRESENT IN 124 COUNTRIES")
+	SwipeUp
+End repeat
+
+put ReadText("countries_UL", "countries_BR") into countries
+
+log countries

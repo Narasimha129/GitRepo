@@ -1,0 +1,22 @@
+﻿RightClick (500,200)
+MoveTo text:"New"
+Click text:"Microsoft Excel Worksheet"
+TypeText "data",return
+typetext return
+
+DoubleClick text:"data"
+TypeText "Rank"
+TypeText tabKey
+Typetext rank,return
+
+TypeText "bottles sold"
+TypeText tabKey
+Typetext bottles_sold,return
+
+TypeText "countries"
+TypeText tabKey
+Typetext countries
+
+typetext controlKey,s
+typetext altKey,F4
+//Closed the excel

@@ -1,0 +1,26 @@
+﻿typetext windowsKey,r
+typetext "chrome",return
+TypeText "outlook.office.com"
+TypeText Return
+
+Click text:"New"
+TypeText "narasimha.gujjula@rb.com"
+typetext return
+
+Click text:"Add a Subject"
+TypeText "Dettol Information"
+typetext tabKey
+TypeText "Hi, Please find the attachment for the dettol info"
+wait 2
+//Attaching the created excel
+
+Click text:"Attach"
+wait 2
+Click text:"Computer"
+
+TypeText "C:\Users\Wtadmin\Desktop\data.xlsx"
+Typetext return
+
+Click text:"Send"
+
+wait 2

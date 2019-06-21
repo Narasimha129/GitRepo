@@ -1,0 +1,8 @@
+﻿put ReadText("Dettolproducts_rank_UL", "Dettolproducts_rank_BR") into rank
+log rank
+
+put ReadText("Dettolproducts_bottles_UL", "Dettolproducts_bottles_BR") into bottles_sold
+log bottles_sold
+put ReadText("Dettolproducts_countries_UL", "Dettolproducts_countries_BR") into countries
+log countries
+typetext altKey,F4

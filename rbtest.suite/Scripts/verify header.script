@@ -1,0 +1,3 @@
+﻿Repeat until ImageFound(text:"Dettol products")
+	typetext pageDown
+End repeat

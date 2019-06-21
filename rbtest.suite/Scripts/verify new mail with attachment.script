@@ -1,0 +1,6 @@
+﻿MoveTo text:"Dettol", waitFor:20
+DoubleClick text:"Dettol", waitFor:5
+wait 2
+CaptureScreen(Name:"email")
+Click text:"data.xlsx"
+CaptureScreen(Name:"excel")

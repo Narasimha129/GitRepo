@@ -1,0 +1,17 @@
+﻿show remote
+global connectionname
+put the name of ConnectionInfo() into connectionname
+If connectionname="IBAIServer" then
+	TypeText windowsKey, r
+	TypeText "Chrome",return
+	
+Else
+	PressHomeButton 
+	Click "GoogleSearch"
+	wait 2 
+	SetOption nextKeyDelay, 0.08
+	
+End if
+TypeText "www.rb.com", return
+CaptureScreen (Name: "rb")
+log connectionname
